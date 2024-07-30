@@ -1,0 +1,61 @@
+
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "python": "/home/tielor/anaconda3/envs/TZB/bin/python3", 
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd":"/home/tielor/code/TD3_BC",
+            "program": "/home/tielor/code/TD3_BC/main-TZB.py",
+            // "console": "integratedTerminal",
+            // "args": [
+            //     "--env_name", "wx",
+            //     "--algorithm_name", "mat",
+            //     "--experiment_name", "single",
+            //     "--scenario", "my_debug",
+            //     "--n_agent", "100",
+            //     "--lr", "5e-4",
+            //     "--entropy_coef", "0.01",
+            //     "--max_grad_norm", "0.5",
+            //     "--eval_episodes", "32",
+            //     "--n_training_threads", "2",
+            //     "--n_rollout_threads", "1", 
+            //     "--num_mini_batch", "1", 
+            //     "--episode_length", "200", 
+            //     "--eval_interval", "1", 
+            //     "--num_env_steps", "10000",
+            //     "--ppo_epoch", "10", 
+            //     "--clip_param", "0.05",
+            //     "--use_eval", "False",
+            //     "--use_value_active_masks", "False",
+            //     "--use_policy_active_masks", "False",
+            // ],//一些要输入的参数
+            // "env": {"CUDA_VISIBLE_DEVICES":"0"}
+        }
+    ]
+}
+
+// DEMO:
+// {
+//     "configurations": [
+//         {
+//             "name": "Python: File",  //名指定py库
+//             "type": "python",
+//             "request": "launch", //保持不动
+//             "cwd": "env path",   //程序先进入到指定路径下，一般是进到build，可执行文件所在地路径
+//             "program": "/python3.7/site-packages/torch/distributed/launch.py",//要执行的文件，${file}为当前文件
+//             "console": "integratedTerminal",
+//             "args": [
+//                 "--nproc_per_node","1",
+//                 "main.py",
+//                 "--master_port","12346","main.py",
+//             "--batch-size","22"],//一些要输入的参数
+//             "env": {"CUDA_VISIBLE_DEVICES":"0"},//指定cuda环境变量.conda环境与编译器默认保持一致
+//         }
+//     ]
+// }

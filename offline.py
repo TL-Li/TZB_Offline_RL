@@ -62,7 +62,7 @@ class Critic(nn.Module):
 		return q1
 
 
-class TD3_BC(object):
+class offline_policy(object):
 	def __init__(
 		self,
 		state_dim,
@@ -75,7 +75,8 @@ class TD3_BC(object):
 		policy_freq=2,
 		alpha=2.5,
 	):
-
+		# debug: check the device
+		# print(device)
 		self.actor = Actor(state_dim, action_dim, max_action).to(device)
 		self.actor_target = copy.deepcopy(self.actor)
 		self.actor_optimizer = torch.optim.Adam(self.actor.parameters(), lr=3e-4)

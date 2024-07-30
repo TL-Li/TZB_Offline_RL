@@ -48,6 +48,27 @@ class ReplayBuffer(object):
 		self.not_done = 1. - dataset['terminals'].reshape(-1,1)
 		self.size = self.state.shape[0]
 
+	def convert_(self, dataset):
+		self.state = dataset['observations']
+		self.action = dataset['actions']
+		self.next_state = dataset['next_observations']
+		self.reward = dataset['rewards'].reshape(-1,1)
+		self.not_done = 1. - dataset['terminals'].reshape(-1,1)
+		self.size = self.state.shape[0]
+
+	def convert_TZB(self, dataset):
+		self.state = np.array(dataset['observations'])
+		self.action = np.array(dataset['actions'])
+		self.next_state = np.array(dataset['next_observations'])
+		self.reward = np.array(dataset['rewards']).reshape(-1,1)
+		self.not_done = np.array(dataset['terminals']).reshape(-1,1)
+		self.size = np.array(self.state).shape[0] / 12
+
+		# debug
+		# print(self.state.shape) (1000, 12)
+		# print(self.action.shape) (1000, 12)
+		# print(self.next_state.shape) (1000, 12)
+
 
 	def normalize_states(self, eps = 1e-3):
 		mean = self.state.mean(0,keepdims=True)
