@@ -49,7 +49,7 @@ def load_data(file_path="./data.json"):
 		"terminals": []
 	}
 	
-	for i in range(1, 1001):
+	for i in range(1, 1038):
 		next_obs = np.concatenate((data[str(i)]["100000"], data[str(i)]["200000"], data[str(i)]["300000"], data[str(i)]["400000"]))
 		dataset['observations'].append(np.zeros(12))
 		dataset['actions'].append(next_obs)
@@ -67,7 +67,7 @@ if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
 	# Experiment
 	parser.add_argument("--policy", default="offline_policy")               # Policy name
-	parser.add_argument("--env", default="test")        				# Our environment name
+	parser.add_argument("--env", default="TZB")        				# Our environment name
 	parser.add_argument("--seed", default=0, type=int)              # Sets Gym, PyTorch and Numpy seeds
 	parser.add_argument("--eval_freq", default=5e3, type=int)       # How often (time steps) we evaluate
 	parser.add_argument("--max_timesteps", default=1e4, type=int)   # Max time steps to run environment

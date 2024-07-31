@@ -28,8 +28,14 @@ def load_data(file_path="./data.json"):
 
 if __name__ == "__main__":
 
-	state = np.zeros(12)#状态空间
-	observation_space = spaces.Box(low=-np.inf, high=np.inf, shape=(12, ), dtype=np.float64)
-	print(observation_space)
+	# state = np.zeros(12)#状态空间
+	# observation_space = spaces.Box(low=-np.inf, high=np.inf, shape=(12, ), dtype=np.float64)
+	# print(observation_space)
         
 	# load_data()
+
+	with open('data.json', 'r', encoding='utf-8') as file:  
+    	# 使用json.load()方法解析JSON数据
+		data = json.load(file)
+	with open('test.json', 'w') as json_file:
+		json.dump(data, json_file, indent=4)
